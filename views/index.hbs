@@ -555,6 +555,24 @@
     </div>
     </section>
 
-     <script src="main.js"></script>
+     <script >
+         let searchbox=document.querySelector('#search');
+let image=document.querySelectorAll(' .main-container  .image-container .image ');
+
+searchbox.oninput=()=>{
+    image.forEach(hide=>hide.style.display='none');
+    let value =searchbox.value;
+    image.forEach(filter=>{
+        let title=filter.getAttribute('data-title');
+        if(value==title){
+            filter.style.display='block'
+        }
+        if (searchbox.value=="") {
+            filter.style.display='block';
+        }
+    });
+};
+
+     </script>
 </body>
 </html>
